@@ -195,9 +195,141 @@ img {
   top: var(--header-height);
 }
 
-.active-link{
-    color: var(--first-color);
+.active-link {
+  color: var(--first-color);
 }
-.scroll-header{
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+.scroll-header {
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* home */
+.home_container {
+  height: calc(100vh - var(--header-height));
+  align-content: center;
+}
+.home_title {
+  font-size: var(--biggest-font-size);
+  color: var(--first-color);
+  margin-bottom: 8px;
+}
+.home_subtitle {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  margin-bottom: 32px;
+}
+.home_img {
+  width: 300px;
+  justify-self: center;
+}
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.button:hover {
+  background-color: var(--first-color-alt);
+}
+
+/* about */
+.about_data {
+  text-align: center;
+}
+.about_description {
+  margin-bottom: 32px;
+}
+.about_img {
+  width: 280px;
+  border-radius: .5rem;
+  justify-self: center;
+}
+
+/* services */
+.services_container{
+  row-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 20px;
+}
+.services_content{
+  text-align: center;
+}
+.services_img{
+  width: 64px;
+  height: 64px;
+  fill: var(--first-color);
+  margin-bottom: 16px;
+}
+.services_title{
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  margin-bottom: 12px;
+}
+
+.services_description{
+  padding: 0 24px;
+}
+/* menu */
+.menu_container{
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+
+.menu_content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--container-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(3, 74, 40, .15);
+  padding: 12px;
+}
+.menu_img{
+  width: 100px;
+  align-self: center;
+  margin-bottom: 16px;
+}
+.menu_name, .menu_price{
+  font-weight: 500;
+  color: var(--title-color);
+}
+.menu_name{
+  font-size: var(--normal-font-size);
+}
+.menu_detail, .menu_price{
+  font-size: var(--small-font-size);
+}
+.menu_detail{
+  margin: 8px 0;
+}
+.menu_button{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  border-radius: 8px 0 ;
+  padding: 10px 13px;
+}
+/* app */
+.app_data{
+  text-align: center;
+}
+.app_description, .app_stores{
+  margin: 20px 0 30px;
+}
+.app_store{
+  width: 120px;
+  margin: 0 10px;
+}
+.app_img{
+  width: 230px;
+  justify-self: center;
+}
+/* contact */
+.contact_container{
+  text-align: center;
+}
+.contact_description{
+  margin: 10px 0;
 }
