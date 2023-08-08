@@ -33,7 +33,8 @@ function scrollActive() {
         .classList.add("active-link");
     } else {
       document
-        .querySelector(".nav_menu a[href*=" + sectionId + "]").classList.remove("active-link");
+        .querySelector(".nav_menu a[href*=" + sectionId + "]")
+        .classList.remove("active-link");
     }
   });
 }
@@ -45,4 +46,48 @@ function scrollHeader() {
   if (this.scrollY >= 200) nav.classList.add("scroll-header");
   else nav.classList.remove("scroll-header");
 }
-window.addEventListener('scroll', scrollHeader)
+window.addEventListener("scroll", scrollHeader);
+
+/* dark theme button */
+const themeButton = document.getElementById("change-button");
+const darkTheme = "dark-theme";
+const iconTheme = "bx-sun";
+
+/* save theme to the local storage */
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+const getCurrentTheme = () =>
+  document.body.classList.contains(darkTheme) ? "dark" : "light";
+const getCurrentIcon = () =>
+  document.body.classList.contains(iconTheme) ? "bx-moon" : "bx-sun";
+
+if (selectedTheme) {
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+    darkTheme
+  );
+  document.body.classList[selectedIcon === "bx-moon" ? "add" : "remove"](
+    iconTheme
+  );
+}
+
+themeButton.addEventListener("click", () => {
+  document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme);
+  localStorage.setItem("selected-theme", getCurrentTheme);
+  localStorage.setItem("selected-icon", getCurrentIcon);
+});
+
+/* scroll reveal animation */
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "30px",
+  duration: 2000,
+  reset: true,
+});
+sr.reveal(
+  `.home_data, .home_img, .about_data, .about_img , .services_content, .menu_content, .app_data, .app_img, .contact_data, .contact_button, .footer_content`,
+  {
+    interval: 200,
+  }
+);
